@@ -14,5 +14,7 @@ def test_find_time_300_words():
     assert result == 1.5
 
 def test_find_time_empty_string():
-    result = find_reading_time("")
-    assert result == "No text given: nothing to calculate!"
+    with pytest.raises(Exception) as e:
+        find_reading_time("")
+    error_message = str(e.value)
+    assert error_message == "No text given: nothing to calculate!"
