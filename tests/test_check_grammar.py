@@ -19,6 +19,14 @@ def test_check_first_letter_capitalised_with_period():
     result = check_grammar("Pandas are the best.")
     assert result == True
 
+def test_check_first_letter_capitalised_with_exclamation():
+    result = check_grammar("Pandas are the best!")
+    assert result == True
+
+def test_check_first_letter_capitalised_with_question():
+    result = check_grammar("Pandas are the best?")
+    assert result == True    
+
 def test_check_capitalised_without_punctuation_ender():
     result = check_grammar("Pandas are the best")
     assert result == False
